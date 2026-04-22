@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HM - Saúde Mental</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">🧠</span>
+                <h1>HM</h1>
+            </div>
+            <p class="tagline">Seu diário de saúde mental</p>
+        </header>
+
+        <main class="app-main">
+            <section class="date-section">
+                <p class="current-date" id="currentDate"></p>
+            </section>
+
+            <section class="form-section">
+                <div class="question-card">
+                    <h2>Como você está se sentindo hoje?</h2>
+                    <div class="emoji-options" id="feelingOptions">
+                        <button class="emoji-btn" data-value="1" title="Muito mal">😢</button>
+                        <button class="emoji-btn" data-value="2" title="Mal">😔</button>
+                        <button class="emoji-btn" data-value="3" title="Ok">😐</button>
+                        <button class="emoji-btn" data-value="4" title="Bem">🙂</button>
+                        <button class="emoji-btn" data-value="5" title="Muito bem">😄</button>
+                    </div>
+                    <p class="selected-label" id="feelingLabel"></p>
+                </div>
+
+                <div class="question-card">
+                    <h2>Nível de ansiedade</h2>
+                    <div class="scale-options">
+                        <button class="scale-btn" data-value="1">1</button>
+                        <button class="scale-btn" data-value="2">2</button>
+                        <button class="scale-btn" data-value="3">3</button>
+                        <button class="scale-btn" data-value="4">4</button>
+                        <button class="scale-btn" data-value="5">5</button>
+                        <button class="scale-btn" data-value="6">6</button>
+                        <button class="scale-btn" data-value="7">7</button>
+                        <button class="scale-btn" data-value="8">8</button>
+                        <button class="scale-btn" data-value="9">9</button>
+                        <button class="scale-btn" data-value="10">10</button>
+                    </div>
+                    <p class="selected-label" id="anxietyLabel"></p>
+                </div>
+
+                <div class="question-card">
+                    <h2>Nível de energia</h2>
+                    <div class="energy-options">
+                        <button class="energy-btn" data-value="1">
+                            <span class="energy-icon">🔋</span>
+                            <span>Muito baixa</span>
+                        </button>
+                        <button class="energy-btn" data-value="2">
+                            <span class="energy-icon">🪫</span>
+                            <span>Baixa</span>
+                        </button>
+                        <button class="energy-btn" data-value="3">
+                            <span class="energy-icon">⚡</span>
+                            <span>Moderada</span>
+                        </button>
+                        <button class="energy-btn" data-value="4">
+                            <span class="energy-icon">💪</span>
+                            <span>Alta</span>
+                        </button>
+                        <button class="energy-btn" data-value="5">
+                            <span class="energy-icon">🚀</span>
+                            <span>Muito alta</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h2>Como foi seu dia?</h2>
+                    <div class="tags-options" id="dayTags">
+                        <button class="tag-btn" data-value="trabalho">💼 Trabalho</button>
+                        <button class="tag-btn" data-value="estudo">📚 Estudo</button>
+                        <button class="tag-btn" data-value="familia">👨‍👩‍👧 Família</button>
+                        <button class="tag-btn" data-value="amigos">👥 Amigos</button>
+                        <button class="tag-btn" data-value="exercicio">🏃 Exercício</button>
+                        <button class="tag-btn" data-value="sono">😴 Sono</button>
+                        <button class="tag-btn" data-value="alimentacao">🥗 Alimentação</button>
+                        <button class="tag-btn" data-value="stress">😰 Stress</button>
+                        <button class="tag-btn" data-value="ansiedade">😟 Ansiedade</button>
+                        <button class="tag-btn" data-value="feliz">😊 Feliz</button>
+                        <button class="tag-btn" data-value="calmo">🧘 Calmo</button>
+                        <button class="tag-btn" data-value="cansado">😴 Cansado</button>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <h2>Notas adicionais</h2>
+                    <textarea id="notes" placeholder="Escreva qualquer pensamento ou reflexão..."></textarea>
+                </div>
+
+                <button class="save-btn" id="saveBtn">Salvar registro</button>
+            </section>
+
+            <section class="history-section">
+                <h2>Histórico</h2>
+                <div class="history-list" id="historyList">
+                    <p class="empty-history">Nenhum registro ainda. Comece hoje!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>HM - Para sua saúde mental 💚</p>
+            <button class="export-btn" id="exportBtn">Exportar dados</button>
+        </footer>
+    </div>
+
+    <div class="modal" id="saveModal">
+        <div class="modal-content">
+            <span class="modal-icon">✅</span>
+            <h3>Registro salvo!</h3>
+            <p>Seu diário foi salvo com sucesso.</p>
+            <button class="modal-close" id="closeModal">Fechar</button>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
